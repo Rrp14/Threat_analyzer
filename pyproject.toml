@@ -1,0 +1,13 @@
+[project]
+name="Threat-intelligence-platform"
+version="0.1.0"
+description="AI powered Threat intelligence platform"
+requires-python=">=3.11"
+
+[tool.pytest.ini_options]
+testpaths=["tests"]
+
+
+python_files=[
+    "test_*.py"
+]
