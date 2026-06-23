@@ -55,11 +55,18 @@ class PipelineContext(DomainModel):
         description="Original input type.",
     )
 
-    raw_input: str = Field(
+    raw_input: str | bytes = Field(
         ...,
         min_length=1,
         description="Original input content.",
     )
+
+    normalized_input: str | None = Field(
+    default=None,
+    description="Normalized text after ingestion."
+)
+
+
 
     file_metadata: FileMetadata | None = Field(
         default=None,
@@ -132,3 +139,7 @@ class PipelineContext(DomainModel):
     @property
     def ioc_count(self) -> int:
         return len(self.iocs)
+    
+    @property
+    def has_normalized_input(self) -> bool:
+        return self.normalized_input is not None

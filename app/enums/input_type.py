@@ -6,3 +6,7 @@ class InputType(str, Enum):
     FILE = "file"
     URL = "url"
     CVE = "cve"
+    JSON="json"
+    CSV="csv"
+    PDF="pdf"
+    DOCX="docx"

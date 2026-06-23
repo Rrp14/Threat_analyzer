@@ -7,7 +7,7 @@ from app.models.schemas import PipelineContext
 class Pipeline:
 
     def __init__(self)->None:
-        self._stages=list[PipelineStage]=[]
+        self._stages:list[PipelineStage]=[]
         self._logger=get_logger(__name__)
 
 

@@ -6,6 +6,7 @@ from app.core.pipeline import Pipeline
 from app.core.stage import PipelineStage
 from app.enums.input_type import InputType
 from app.models.schemas import PipelineContext
+from app.stages.ingestion_stage import IngestionStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -14,7 +15,12 @@ class ThreatAnalysisOrchestrator:
     def __init__(self)->None:
         self._logger=get_logger(__name__)
         self._stages:list[PipelineStage]=[]
+        self._register_default_stages()
 
+    def _register_default_stages(self) -> None:
+
+       self.register_stage(IngestionStage())
+       #self.register_stage(IOCExtractionStage())
 
     def register_stage(
             self,
@@ -43,7 +49,7 @@ class ThreatAnalysisOrchestrator:
 
     def analyze(
             self,
-            raw_input:str,
+            raw_input:str |bytes,
             input_type:InputType,
     )  ->PipelineContext:
 
@@ -86,5 +92,12 @@ class ThreatAnalysisOrchestrator:
             )
 
             raise
+
+    @property
+    def stages(self) -> tuple[PipelineStage, ...]:
+       """
+       Return registered stages.
+    """
+       return tuple(self._stages)    
 
         

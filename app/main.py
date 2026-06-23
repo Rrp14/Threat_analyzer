@@ -1,5 +1,6 @@
 from contextlib import asynccontextmanager
 from app.api.endpoints.health import router as health_router
+from app.api.endpoints.ingest import router as ingest_router
 from fastapi import FastAPI
 from app.config import settings
 from app.core.logger import configure_logging,get_logger
@@ -50,5 +51,6 @@ app=FastAPI(
     )
 
 app.include_router(health_router)
+app.include_router(ingest_router)
 
 
