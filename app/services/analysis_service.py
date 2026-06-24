@@ -1,4 +1,5 @@
 from sqlalchemy.orm import Session
+from app.models.graph import IOCRelationshipGraph
 from app.models.report import AIReport
 from app.models.schemas import PipelineContext
 from app.repositories.analysis_repository import (
@@ -9,6 +10,9 @@ from app.models.detection import DetectionRules
 from app.database.models import IOCRecord
 from app.database.models import CVERecord
 from app.database.models import MITRERecord
+from app.models.attack_path import (
+    AttackPathPrediction,
+)
 
 class AnalysisService:
 
@@ -243,6 +247,77 @@ class AnalysisService:
         db,
         technique_id,
     )
+
+
+    def save_graph(
+    self,
+    db: Session,
+    analysis_id: str,
+    graph: IOCRelationshipGraph,
+) -> None:
+
+     self._repository.save_graph(
+        db,
+        analysis_id,
+        graph.model_dump_json(),
+    )
+     
+
+    def get_graph(
+    self,
+    db: Session,
+    analysis_id: str,
+) -> IOCRelationshipGraph | None:
+
+     graph_json = (
+        self._repository.get_graph(
+            db,
+            analysis_id,
+        )
+    )
+
+     if graph_json is None:
+        return None
+
+     return IOCRelationshipGraph.model_validate_json(
+        graph_json
+    ) 
+
+
+    def save_attack_path(
+    self,
+    db: Session,
+    analysis_id: str,
+    attack_path: AttackPathPrediction,
+) -> None:
+
+       self._repository.save_attack_path(
+        db,
+        analysis_id,
+        attack_path.model_dump_json(),
+    )
+       
+
+
+    def get_attack_path(
+    self,
+    db: Session,
+    analysis_id: str,
+) -> AttackPathPrediction | None:
+
+      path_json = (
+        self._repository.get_attack_path(
+            db,
+            analysis_id,
+        )
+    )
+
+      if path_json is None:
+        return None
+
+      return AttackPathPrediction.model_validate_json(
+        path_json
+    )   
          
      
 

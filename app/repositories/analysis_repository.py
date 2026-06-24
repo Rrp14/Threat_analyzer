@@ -2,10 +2,14 @@ from sqlalchemy.orm import Session
 
 from app.database.models import (
     Analysis,
+    IOCGraphRecord,
     IOCRecord,
     CVERecord,
     MITRERecord,
+    AttackPathRecord
 )
+
+
 
 
 class AnalysisRepository:
@@ -243,3 +247,110 @@ class AnalysisRepository:
             )
             .all()
         )
+    
+    def save_graph(
+    self,
+    db: Session,
+    analysis_id: str,
+    graph_json: str,
+) -> None:
+
+     record = (
+        db.query(IOCGraphRecord)
+        .filter(
+            IOCGraphRecord.analysis_id
+            == analysis_id
+        )
+        .first()
+    )
+
+     if record:
+
+        record.graph_json = graph_json
+
+     else:
+
+        record = IOCGraphRecord(
+            analysis_id=analysis_id,
+            graph_json=graph_json,
+        )
+
+        db.add(record)
+
+     db.commit()
+
+
+
+    def get_graph(
+    self,
+    db: Session,
+    analysis_id: str,
+) -> str | None:
+
+     record = (
+        db.query(IOCGraphRecord)
+        .filter(
+            IOCGraphRecord.analysis_id
+            == analysis_id
+        )
+        .first()
+    )
+ 
+     if record is None:
+        return None
+
+     return record.graph_json 
+    
+
+
+    def save_attack_path(
+    self,
+    db: Session,
+    analysis_id: str,
+    path_json: str,
+) -> None:
+
+      record = (
+        db.query(AttackPathRecord)
+        .filter(
+            AttackPathRecord.analysis_id
+            == analysis_id
+        )
+        .first()
+    )
+
+      if record:
+
+        record.path_json = path_json
+
+      else:
+
+        record = AttackPathRecord(
+            analysis_id=analysis_id,
+            path_json=path_json,
+        )
+
+        db.add(record)
+
+      db.commit()
+
+
+    def get_attack_path(
+    self,
+    db: Session,
+    analysis_id: str,
+) -> str | None:
+
+       record = (
+        db.query(AttackPathRecord)
+        .filter(
+            AttackPathRecord.analysis_id
+            == analysis_id
+        )
+        .first()
+    )
+
+       if record is None:
+        return None
+
+       return record.path_json  

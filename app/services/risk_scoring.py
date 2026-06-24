@@ -1,4 +1,5 @@
 import json
+import math
 from pathlib import Path
 
 from app.enums.risk import (
@@ -159,12 +160,23 @@ class RiskScoringService:
                 )
             )
 
-        total_score = min(
-            sum(
-                factor.score
-                for factor in factors
-            ),
-            100,
+        # ----------------------------
+        # Final Score (0-100)
+        # ----------------------------
+
+        raw_score = sum(
+            factor.score
+            for factor in factors
+        )
+
+        total_score = round(
+            100
+            * (
+                1
+                - math.exp(
+                    -raw_score / 100
+                )
+            )
         )
 
         return RiskScore(

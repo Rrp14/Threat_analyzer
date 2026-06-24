@@ -157,3 +157,41 @@ class DetectionRuleRecord(Base):
     )
 
 
+
+class IOCGraphRecord(Base):
+
+    __tablename__ = "ioc_graphs"
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True
+    )
+
+    analysis_id: Mapped[str] = mapped_column(
+        ForeignKey("analysis.analysis_id"),
+        unique=True,
+        index=True,
+    )
+
+    graph_json: Mapped[str] = mapped_column(
+        Text
+    )
+
+
+class AttackPathRecord(Base):
+
+    __tablename__ = "attack_paths"
+
+    id: Mapped[int] = mapped_column(
+        primary_key=True
+    )
+
+    analysis_id: Mapped[str] = mapped_column(
+        ForeignKey("analysis.analysis_id"),
+        unique=True,
+        index=True,
+    )
+
+    path_json: Mapped[str] = mapped_column(
+        Text
+    )
+

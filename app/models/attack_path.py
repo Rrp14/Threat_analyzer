@@ -25,3 +25,9 @@ class AttackStage(DomainModel):
     )
 
     confidence: Confidence
+
+class AttackPathPrediction(DomainModel):
+
+    confidence: Confidence
+
+    stages: list[AttackStage]

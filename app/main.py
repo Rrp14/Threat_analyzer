@@ -14,6 +14,12 @@ from app.api.endpoints.detection_generation import (
 )
 from app.api.endpoints.report_generation import router as report_generator_router
 from app.api.endpoints.intelligence import router as intelligent_router
+from app.api.endpoints.graph_generation import (
+    router as graph_router,
+)
+from app.api.endpoints.attack_path_generation import (
+    router as attack_path_router,
+)
 
 
 logger=get_logger(__name__)
@@ -66,5 +72,11 @@ app.include_router(
     detection_generation_router
 )
 app.include_router(intelligent_router)
+app.include_router(
+    graph_router
+)
+app.include_router(
+    attack_path_router
+)
 
 
