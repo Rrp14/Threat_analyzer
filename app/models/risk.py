@@ -50,13 +50,7 @@ class RiskScore(DomainModel):
        return self.level == RiskLevel.CRITICAL
     
 
-    @property
-    def is_high(self) -> bool:
-       return self.level == RiskLevel.HIGH
 
-    @property
-    def is_critical(self) -> bool:
-       return self.level == RiskLevel.CRITICAL
     
     @property
     def factor_count(self) -> int:

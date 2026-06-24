@@ -1,0 +1,25 @@
+{
+  "reputation": {
+    "malicious": 20,
+    "suspicious": 10,
+    "clean": 0,
+    "unknown": 0
+  },
+
+  "severity": {
+    "critical": 30,
+    "high": 20,
+    "medium": 10,
+    "low": 5
+  },
+
+  "mitre": {
+    "T1190": 15,
+    "T1566": 10,
+    "T1071": 5
+  },
+
+  "threat_actor": 10,
+  "malware_family": 15,
+  "public_exploit": 25
+}
