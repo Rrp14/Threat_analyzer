@@ -12,6 +12,14 @@ class Settings(BaseSettings):
 
     log_level:str="INFO"
 
+    AI_PROVIDER: str = "gemini"
+
+    GEMINI_API_KEY: str | None = None
+
+    GEMINI_MODEL: str = (
+    "gemini-2.5-flash"
+)
+
     model_config=SettingsConfigDict(
         env_file=".env",
         case_sensitive=False,

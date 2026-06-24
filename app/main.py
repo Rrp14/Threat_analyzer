@@ -5,6 +5,7 @@ from app.api.endpoints.extract import router as extract_router
 from app.api.endpoints.enrich import router as enrich_router
 from app.api.endpoints.mitre import router as mitre_router
 from app.api.endpoints.risk import router as risk_router
+from app.api.endpoints.report import router as report_router
 from fastapi import FastAPI
 from app.config import settings
 from app.core.logger import configure_logging,get_logger
@@ -60,5 +61,6 @@ app.include_router(extract_router)
 app.include_router(enrich_router)
 app.include_router(mitre_router)
 app.include_router(risk_router)
+app.include_router(report_router)
 
 

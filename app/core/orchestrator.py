@@ -11,6 +11,7 @@ from app.stages.ioc_extraction_stage import IOCExtractionStage
 from app.stages.enrichment_stage import EnrichmentStage
 from app.stages.mitre_mapping_stage import MitreMappingStage
 from app.stages.risk_scoring_stage import RiskScoringStage
+from app.stages.ai_report_stage import AIReportStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -28,6 +29,7 @@ class ThreatAnalysisOrchestrator:
        self.register_stage(EnrichmentStage())
        self.register_stage(MitreMappingStage())
        self.register_stage(RiskScoringStage())
+       self.register_stage(AIReportStage())
 
     def register_stage(
             self,

@@ -65,8 +65,8 @@ class DetectionRules(DomainModel):
 
     )
 
-    siem_queires:list[SIEMQuery]=Field(
-        default_factory=dict,
+    siem_queries:list[SIEMQuery]=Field(
+        default_factory=list,
         description="Platform specific SIEM queries"
 
     )
