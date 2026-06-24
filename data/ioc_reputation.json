@@ -1,0 +1,51 @@
+{
+  "8.8.8.8": {
+    "score": 5,
+    "level": "clean"
+  },
+
+  "1.1.1.1": {
+    "score": 5,
+    "level": "clean"
+  },
+
+  "evil-domain.com": {
+    "score": 95,
+    "level": "malicious"
+  },
+
+  "attacker@evil-domain.com": {
+    "score": 90,
+    "level": "malicious"
+  },
+
+  "malware-c2.net": {
+    "score": 85,
+    "level": "malicious"
+  },
+
+  "phishing-login.org": {
+    "score": 80,
+    "level": "suspicious"
+  },
+
+  "CVE-2024-12345": {
+    "score": 75,
+    "level": "suspicious"
+  },
+
+  "44d88612fea8a8f36de82e1278abb02f": {
+    "score": 100,
+    "level": "malicious"
+  },
+
+  "3395856ce81f2b7382dee72602f798b642f14140": {
+    "score": 100,
+    "level": "malicious"
+  },
+
+  "275a021bbfb6481f9f89f7d4f7cfc2b0d6f0a8a09e5f1f5d0f2b4e7d7d7d7d7d": {
+    "score": 100,
+    "level": "malicious"
+  }
+}

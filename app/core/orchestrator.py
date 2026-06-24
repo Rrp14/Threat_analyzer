@@ -8,6 +8,7 @@ from app.enums.input_type import InputType
 from app.models.schemas import PipelineContext
 from app.stages.ingestion_stage import IngestionStage
 from app.stages.ioc_extraction_stage import IOCExtractionStage
+from app.stages.enrichment_stage import EnrichmentStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -22,6 +23,7 @@ class ThreatAnalysisOrchestrator:
 
        self.register_stage(IngestionStage())
        self.register_stage(IOCExtractionStage())
+       self.register_stage(EnrichmentStage())
 
     def register_stage(
             self,
