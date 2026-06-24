@@ -7,6 +7,7 @@ from app.core.stage import PipelineStage
 from app.enums.input_type import InputType
 from app.models.schemas import PipelineContext
 from app.stages.ingestion_stage import IngestionStage
+from app.stages.ioc_extraction_stage import IOCExtractionStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -20,7 +21,7 @@ class ThreatAnalysisOrchestrator:
     def _register_default_stages(self) -> None:
 
        self.register_stage(IngestionStage())
-       #self.register_stage(IOCExtractionStage())
+       self.register_stage(IOCExtractionStage())
 
     def register_stage(
             self,

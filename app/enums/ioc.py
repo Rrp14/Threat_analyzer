@@ -3,6 +3,7 @@ from enum import Enum
 
 class IOCType(str,Enum):
     IPV4="ipv4"
+    IPV6="ipv6"
     DOMAIN="domain"
     URL="url"
     EMAIL="email"
