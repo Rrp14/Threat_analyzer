@@ -9,6 +9,7 @@ from app.models.schemas import PipelineContext
 from app.stages.ingestion_stage import IngestionStage
 from app.stages.ioc_extraction_stage import IOCExtractionStage
 from app.stages.enrichment_stage import EnrichmentStage
+from app.stages.mitre_mapping_stage import MitreMappingStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -24,6 +25,7 @@ class ThreatAnalysisOrchestrator:
        self.register_stage(IngestionStage())
        self.register_stage(IOCExtractionStage())
        self.register_stage(EnrichmentStage())
+       self.register_stage(MitreMappingStage())
 
     def register_stage(
             self,

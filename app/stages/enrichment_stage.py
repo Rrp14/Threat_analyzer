@@ -67,12 +67,12 @@ class EnrichmentStage(PipelineStage):
             context.iocs
         )
 
-        """temporary"""
-        print("\n===enriched iocs===")
-        print(context.iocs)
+        #"""temporary"""
+        #print("\n===enriched iocs===")
+        #print(context.iocs)
 
-        print("\n===enrichment data===")
-        print(context.enrichment)
+        #print("\n===enrichment data===")
+        #print(context.enrichment)
 
 
 

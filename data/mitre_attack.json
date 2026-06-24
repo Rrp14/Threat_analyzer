@@ -1,0 +1,37 @@
+{
+  "email": [
+    {
+      "tactic": "Initial Access",
+      "technique": "Phishing",
+      "id": "T1566",
+      "confidence": "high"
+    }
+  ],
+
+  "cve": [
+    {
+      "tactic": "Initial Access",
+      "technique": "Exploit Public-Facing Application",
+      "id": "T1190",
+      "confidence": "high"
+    }
+  ],
+
+  "url": [
+    {
+      "tactic": "Command and Control",
+      "technique": "Application Layer Protocol",
+      "id": "T1071",
+      "confidence": "medium"
+    }
+  ],
+
+  "domain": [
+    {
+      "tactic": "Command and Control",
+      "technique": "Application Layer Protocol",
+      "id": "T1071",
+      "confidence": "medium"
+    }
+  ]
+}
