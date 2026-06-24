@@ -6,8 +6,10 @@ from app.models.report import AIReport
 class BaseAIProvider(ABC):
 
     @abstractmethod
-    def generate_report(
+    def generate(
         self,
-        context: dict,
+        *,
+        prompt:str,
+        response_model:type
     ) -> AIReport:
         ...

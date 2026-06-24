@@ -1,16 +1,23 @@
 from google import genai
 
-from app.ai.providers.base import BaseAIProvider
+from app.ai.prompts.detection_prompt import (
+    build_detection_prompt,
+)
 from app.config import settings
-from app.core.exceptions import AIError
+from app.core.exceptions import (
+    DetectionRuleError,
+)
+from app.models.detection import (
+    DetectionRules,
+)
 
 
-class GeminiProvider(BaseAIProvider):
+class GeminiDetectionProvider:
 
     def __init__(self) -> None:
 
         if not settings.GEMINI_API_KEY:
-            raise AIError(
+            raise DetectionRuleError(
                 "GEMINI_API_KEY not configured"
             )
 
@@ -18,12 +25,14 @@ class GeminiProvider(BaseAIProvider):
             api_key=settings.GEMINI_API_KEY
         )
 
-    def generate(
+    def generate_rules(
         self,
-        *,
-        prompt: str,
-        response_model: type,
-    ):
+        context: dict,
+    ) -> DetectionRules:
+
+        prompt = build_detection_prompt(
+            context
+        )
 
         try:
 
@@ -45,12 +54,12 @@ class GeminiProvider(BaseAIProvider):
                 )
 
             return (
-                response_model
+                DetectionRules
                 .model_validate_json(text)
             )
 
         except Exception as exc:
 
-            raise AIError(
-                f"Gemini generation failed: {exc}"
+            raise DetectionRuleError(
+                f"Detection generation failed: {exc}"
             ) from exc

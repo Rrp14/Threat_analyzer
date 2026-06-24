@@ -1,16 +1,19 @@
 from contextlib import asynccontextmanager
 from app.api.endpoints.health import router as health_router
-from app.api.endpoints.ingest import router as ingest_router
-from app.api.endpoints.extract import router as extract_router
-from app.api.endpoints.enrich import router as enrich_router
-from app.api.endpoints.mitre import router as mitre_router
-from app.api.endpoints.risk import router as risk_router
-from app.api.endpoints.report import router as report_router
+from app.api.endpoints.analyze import router as analyze_router
 from fastapi import FastAPI
 from app.config import settings
 from app.core.logger import configure_logging,get_logger
 from app.database.db import init_db
 from app.core.exceptions import DatabaseError 
+from app.api.endpoints.analyses import (
+    router as analyses_router
+)
+from app.api.endpoints.detection_generation import (
+    router as detection_generation_router
+)
+from app.api.endpoints.report_generation import router as report_generator_router
+from app.api.endpoints.intelligence import router as intelligent_router
 
 
 logger=get_logger(__name__)
@@ -56,11 +59,12 @@ app=FastAPI(
     )
 
 app.include_router(health_router)
-app.include_router(ingest_router)
-app.include_router(extract_router)
-app.include_router(enrich_router)
-app.include_router(mitre_router)
-app.include_router(risk_router)
-app.include_router(report_router)
+app.include_router(analyze_router)
+app.include_router(analyses_router)
+app.include_router(report_generator_router)
+app.include_router(
+    detection_generation_router
+)
+app.include_router(intelligent_router)
 
 

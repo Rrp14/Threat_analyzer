@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     app_version:str="0.1.0"
 
 
-    database_url:str="sqlite:///./threat.db"
+    database_url:str
 
     log_level:str="INFO"
 

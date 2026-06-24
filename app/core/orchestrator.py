@@ -12,6 +12,7 @@ from app.stages.enrichment_stage import EnrichmentStage
 from app.stages.mitre_mapping_stage import MitreMappingStage
 from app.stages.risk_scoring_stage import RiskScoringStage
 from app.stages.ai_report_stage import AIReportStage
+from app.stages.detection_rule_stage import DetectionRuleStage
 
 
 class ThreatAnalysisOrchestrator:
@@ -29,7 +30,7 @@ class ThreatAnalysisOrchestrator:
        self.register_stage(EnrichmentStage())
        self.register_stage(MitreMappingStage())
        self.register_stage(RiskScoringStage())
-       self.register_stage(AIReportStage())
+
 
     def register_stage(
             self,
@@ -107,6 +108,30 @@ class ThreatAnalysisOrchestrator:
        """
        Return registered stages.
     """
-       return tuple(self._stages)    
+       return tuple(self._stages)   
+
+    def generate_report(
+            self,
+            context:PipelineContext,
+
+    ) ->PipelineContext:
+        
+        stage=AIReportStage()
+
+        stage.validate(context)
+
+        return stage.execute(context)
+    
+    def generate_detection(
+            self,
+            context:PipelineContext,
+
+    )->PipelineContext:
+        
+        stage=DetectionRuleStage()
+
+        stage.validate(context)
+
+        return stage.execute(context)
 
         
