@@ -60,6 +60,7 @@ ENV/
 env.bak/
 venv.bak/
 myenv/
+docs/
 
 project_context/
 

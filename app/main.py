@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 from app.api.endpoints.health import router as health_router
 from app.api.endpoints.analyze import router as analyze_router
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.config import settings
 from app.core.logger import configure_logging,get_logger
 from app.database.db import init_db
@@ -20,6 +21,8 @@ from app.api.endpoints.graph_generation import (
 from app.api.endpoints.attack_path_generation import (
     router as attack_path_router,
 )
+from app.api.endpoints.search import router as search_router
+
 
 
 logger=get_logger(__name__)
@@ -64,6 +67,14 @@ app=FastAPI(
         lifespan=lifespan
     )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(health_router)
 app.include_router(analyze_router)
 app.include_router(analyses_router)
@@ -78,5 +89,7 @@ app.include_router(
 app.include_router(
     attack_path_router
 )
+app.include_router(search_router)
+
 
 
