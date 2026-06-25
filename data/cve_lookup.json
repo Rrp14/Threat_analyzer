@@ -1,3 +1,6 @@
+
+
+
 {
   "CVE-2024-12345": {
     "cvss": 9.8,
@@ -9,7 +12,6 @@
       "Example Gateway"
     ]
   },
-
   "CVE-2023-11111": {
     "cvss": 6.5,
     "severity": "medium",
@@ -17,6 +19,217 @@
     "exploit_available": false,
     "affected_products": [
       "Example Product"
+    ]
+  },
+  "CVE-2024-55591": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Critical authentication bypass vulnerability in Fortinet FortiOS and FortiProxy. Allows unauthenticated remote attackers to gain super-admin privileges via crafted requests to the Node.js websocket module. Actively exploited by suspected China-nexus threat actors.",
+    "exploit_available": true,
+    "affected_products": [
+      "Fortinet FortiOS 7.0.0 - 7.0.16",
+      "Fortinet FortiProxy 7.0.0 - 7.0.19",
+      "Fortinet FortiProxy 7.2.0 - 7.2.12"
+    ]
+  },
+  "CVE-2024-6387": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Remote unauthenticated code execution vulnerability in OpenSSH server (regreSSHion). A signal handler race condition in glibc-based Linux systems allows attackers to execute arbitrary code as root. First critical RCE in OpenSSH in nearly 20 years.",
+    "exploit_available": true,
+    "affected_products": [
+      "OpenSSH server < 4.4p1",
+      "OpenSSH server 8.5p1 - 9.7p1 (glibc Linux)"
+    ]
+  },
+  "CVE-2024-3400": {
+    "cvss": 10.0,
+    "severity": "critical",
+    "description": "Arbitrary file creation leads to OS command injection in Palo Alto Networks PAN-OS GlobalProtect. Allows unauthenticated remote attackers to execute arbitrary code with root privileges via specially crafted network requests. Used by Black Basta ransomware gang.",
+    "exploit_available": true,
+    "affected_products": [
+      "Palo Alto PAN-OS 10.2",
+      "Palo Alto PAN-OS 11.0",
+      "Palo Alto PAN-OS 11.1"
+    ]
+  },
+  "CVE-2024-1709": {
+    "cvss": 10.0,
+    "severity": "critical",
+    "description": "Authentication bypass vulnerability in ConnectWise ScreenConnect. Allows unauthenticated attackers to create administrative accounts and gain full control by directly accessing the SetupWizard.aspx endpoint. Mass exploitation observed within hours of disclosure.",
+    "exploit_available": true,
+    "affected_products": [
+      "ConnectWise ScreenConnect <= 23.9.7"
+    ]
+  },
+  "CVE-2024-40766": {
+    "cvss": 9.3,
+    "severity": "critical",
+    "description": "Improper access control vulnerability in SonicWall SonicOS affecting management access and SSLVPN. Can grant unauthorized access to system resources and cause firewall crashes. Exploited in the wild for remote code execution.",
+    "exploit_available": true,
+    "affected_products": [
+      "SonicWall Firewall Gen 5",
+      "SonicWall Firewall Gen 6",
+      "SonicWall Firewall Gen 7 (SonicOS <= 7.0.1-5035)"
+    ]
+  },
+  "CVE-2024-49138": {
+    "cvss": 7.8,
+    "severity": "high",
+    "description": "Windows Common Log File System (CLFS) driver elevation of privilege vulnerability. Heap-based buffer overflow allows attackers to gain SYSTEM privileges. Exploited in ransomware attacks for local privilege escalation.",
+    "exploit_available": true,
+    "affected_products": [
+      "Windows 10 (all versions)",
+      "Windows 11 (all versions)",
+      "Windows Server 2008 - 2025"
+    ]
+  },
+  "CVE-2024-58136": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Remote code execution in Yii 2 framework. Mishandles attaching behavior defined by __class array key, allowing arbitrary PHP object instantiation and code execution. Actively exploited in the wild against Craft CMS installations.",
+    "exploit_available": true,
+    "affected_products": [
+      "Yii 2 < 2.0.52",
+      "Craft CMS (with vulnerable Yii 2 dependency)"
+    ]
+  },
+  "CVE-2024-1086": {
+    "cvss": 7.8,
+    "severity": "high",
+    "description": "Use-after-free vulnerability in Linux Kernel netfilter nf_tables subsystem. Allows local attackers to escalate privileges to root via crafted nftables operations. Actively exploited in ransomware campaigns since May 2024.",
+    "exploit_available": true,
+    "affected_products": [
+      "Linux Kernel 5.14 - 6.6 (before patch)",
+      "Linux distributions using nf_tables (Ubuntu, Debian, RHEL, etc.)"
+    ]
+  },
+  "CVE-2024-29849": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Authentication bypass vulnerability in Veeam Backup Enterprise Manager. Allows unauthenticated attackers to bypass authentication and log in as any user via the REST API by providing a crafted SAML SSO token.",
+    "exploit_available": true,
+    "affected_products": [
+      "Veeam Backup & Replication < 12.1.2 (build 12.1.2.172)"
+    ]
+  },
+  "CVE-2024-32002": {
+    "cvss": 9.0,
+    "severity": "critical",
+    "description": "Remote code execution in Git via crafted repositories with submodules. Exploits case-insensitive filesystem handling and symlink support to write malicious hooks into .git/ directory, executing code during clone operations.",
+    "exploit_available": true,
+    "affected_products": [
+      "Git < 2.45.1, < 2.44.1, < 2.43.4, < 2.42.2, < 2.41.1, < 2.40.2, < 2.39.4",
+      "Microsoft Visual Studio 2017 version 15.9"
+    ]
+  },
+  "CVE-2024-21683": {
+    "cvss": 8.8,
+    "severity": "high",
+    "description": "Authenticated remote code execution in Atlassian Confluence Data Center and Server. Attackers with permissions to add new macro languages can upload malicious JavaScript files that execute arbitrary code via the Rhino parser's Java class access.",
+    "exploit_available": true,
+    "affected_products": [
+      "Atlassian Confluence Data Center < 8.9.1",
+      "Atlassian Confluence Server < 8.5.9 LTS / < 7.19.22 LTS"
+    ]
+  },
+  "CVE-2024-36991": {
+    "cvss": 7.5,
+    "severity": "high",
+    "description": "Path traversal vulnerability in Splunk Enterprise on Windows. The Python os.path.join function mishandles drive letters, allowing unauthenticated attackers to read arbitrary files via the /modules/messaging/ endpoint.",
+    "exploit_available": true,
+    "affected_products": [
+      "Splunk Enterprise 9.2.0 - 9.2.1 (Windows)",
+      "Splunk Enterprise 9.1.0 - 9.1.4 (Windows)",
+      "Splunk Enterprise 9.0.0 - 9.0.9 (Windows)"
+    ]
+  },
+  "CVE-2024-45216": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Authentication bypass in Apache Solr PKIAuthenticationPlugin. Attackers can append a fake URL path ending to any Solr API request to skip authentication while maintaining the original API contract. Affects all Solr deployments using authentication.",
+    "exploit_available": true,
+    "affected_products": [
+      "Apache Solr 5.3.0 - 8.11.3",
+      "Apache Solr 9.0.0 - 9.6.x"
+    ]
+  },
+  "CVE-2024-8190": {
+    "cvss": 7.2,
+    "severity": "high",
+    "description": "OS command injection vulnerability in Ivanti Cloud Services Appliance. Allows remote authenticated attackers with admin privileges to execute arbitrary OS commands. Exploited in the wild in combination with CVE-2024-8963.",
+    "exploit_available": true,
+    "affected_products": [
+      "Ivanti Cloud Services Appliance 4.6 Patch 518 and earlier"
+    ]
+  },
+  "CVE-2023-22515": {
+    "cvss": 10.0,
+    "severity": "critical",
+    "description": "Broken access control vulnerability in Atlassian Confluence Server and Data Center. Allows unauthenticated remote attackers to create unauthorized administrator accounts and gain full access to Confluence instances. Exploited by Storm-0062 APT group.",
+    "exploit_available": true,
+    "affected_products": [
+      "Atlassian Confluence Server 8.0.0 - 8.5.1",
+      "Atlassian Confluence Data Center 8.0.0 - 8.5.1"
+    ]
+  },
+  "CVE-2023-20198": {
+    "cvss": 10.0,
+    "severity": "critical",
+    "description": "Critical authentication bypass in Cisco IOS XE Web UI. Allows remote unauthenticated attackers to create a local account with privilege level 15 (full admin) access. Over 50,000 Cisco devices found compromised with Lua-based implants.",
+    "exploit_available": true,
+    "affected_products": [
+      "Cisco IOS XE Software (Web UI enabled)",
+      "Cisco Catalyst, ASR, ISR, C8000 series"
+    ]
+  },
+  "CVE-2023-34362": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "SQL injection vulnerability in MOVEit Transfer web application. Allows unauthenticated attackers to gain unauthorized access to the database, execute arbitrary code, and exfiltrate data. Exploited by CL0P ransomware gang affecting 600+ organizations.",
+    "exploit_available": true,
+    "affected_products": [
+      "Progress MOVEit Transfer 2023.0.0",
+      "Progress MOVEit Transfer 2022.1.x",
+      "Progress MOVEit Transfer 2022.0.x",
+      "Progress MOVEit Transfer 2021.1.x"
+    ]
+  },
+  "CVE-2023-27350": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Authentication bypass vulnerability in PaperCut NG/MF print management software. Inadequate access control in the SetupCompleted Java class allows attackers to bypass authentication and execute arbitrary code. The most exploited vulnerability of 2023.",
+    "exploit_available": true,
+    "affected_products": [
+      "PaperCut NG/MF 8.0.0 - 22.0.3 (Build 63822)"
+    ]
+  },
+  "CVE-2023-2868": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Remote command injection vulnerability in Barracuda Email Security Gateway. Insufficient input validation in TAR file parsing allows attackers to execute arbitrary system commands. Barracuda urged customers to replace affected hardware entirely.",
+    "exploit_available": true,
+    "affected_products": [
+      "Barracuda Email Security Gateway (ESG) 5.1.3.001 - 9.2.1.001"
+    ]
+  },
+  "CVE-2023-23397": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Microsoft Outlook elevation of privilege vulnerability. Attackers can send a specially crafted email that triggers NTLM credential theft when processed by Outlook, with zero user interaction required. Works even in Preview Pane.",
+    "exploit_available": true,
+    "affected_products": [
+      "Microsoft Outlook 2013, 2016, 2019, 2021",
+      "Microsoft 365 Apps for Enterprise"
+    ]
+  },
+  "CVE-2023-20887": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Command injection vulnerability in VMware Aria Operations for Networks. Allows network-based attackers to remotely execute arbitrary commands with root/administrative privileges without authentication.",
+    "exploit_available": true,
+    "affected_products": [
+      "VMware Aria Operations for Networks 6.0.0 - 6.10.0"
     ]
   }
 }

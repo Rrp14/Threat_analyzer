@@ -5,33 +5,246 @@
       "technique": "Phishing",
       "id": "T1566",
       "confidence": "high"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "Spearphishing Attachment",
+      "id": "T1566.001",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "Spearphishing Link",
+      "id": "T1566.002",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "Spearphishing via Service",
+      "id": "T1566.003",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "Valid Accounts",
+      "id": "T1078",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Credential Access",
+      "technique": "Input Capture",
+      "id": "T1056",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Execution",
+      "technique": "User Execution",
+      "id": "T1204",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Execution",
+      "technique": "Malicious File",
+      "id": "T1204.002",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Defense Evasion",
+      "technique": "Masquerading",
+      "id": "T1036",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Application Layer Protocol",
+      "id": "T1071.003",
+      "confidence": "medium"
     }
   ],
-
   "cve": [
     {
       "tactic": "Initial Access",
       "technique": "Exploit Public-Facing Application",
       "id": "T1190",
       "confidence": "high"
+    },
+    {
+      "tactic": "Execution",
+      "technique": "Exploitation for Client Execution",
+      "id": "T1203",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Credential Access",
+      "technique": "Exploitation for Credential Access",
+      "id": "T1212",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Privilege Escalation",
+      "technique": "Exploitation for Privilege Escalation",
+      "id": "T1068",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Defense Evasion",
+      "technique": "Exploitation for Defense Evasion",
+      "id": "T1211",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Lateral Movement",
+      "technique": "Exploitation of Remote Services",
+      "id": "T1210",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "External Remote Services",
+      "id": "T1133",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Initial Access",
+      "technique": "Trusted Relationship",
+      "id": "T1199",
+      "confidence": "low"
+    },
+    {
+      "tactic": "Execution",
+      "technique": "Command and Scripting Interpreter",
+      "id": "T1059",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Persistence",
+      "technique": "Boot or Logon Autostart Execution",
+      "id": "T1547",
+      "confidence": "medium"
     }
   ],
-
   "url": [
     {
       "tactic": "Command and Control",
       "technique": "Application Layer Protocol",
       "id": "T1071",
       "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Web Protocols",
+      "id": "T1071.001",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "DNS",
+      "id": "T1071.004",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "File Transfer Protocols",
+      "id": "T1071.002",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Data Encoding",
+      "id": "T1132",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Data Obfuscation",
+      "id": "T1001",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Exfiltration",
+      "technique": "Exfiltration Over Web Service",
+      "id": "T1567",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Exfiltration",
+      "technique": "Exfiltration Over C2 Channel",
+      "id": "T1041",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Resource Development",
+      "technique": "Acquire Infrastructure",
+      "id": "T1583",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Resource Development",
+      "technique": "Domains",
+      "id": "T1583.001",
+      "confidence": "high"
     }
   ],
-
   "domain": [
     {
       "tactic": "Command and Control",
       "technique": "Application Layer Protocol",
       "id": "T1071",
       "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Web Protocols",
+      "id": "T1071.001",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "DNS",
+      "id": "T1071.004",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Dynamic Resolution",
+      "id": "T1568",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Domain Generation Algorithms",
+      "id": "T1568.002",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Fast Flux DNS",
+      "id": "T1568.001",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Encrypted Channel",
+      "id": "T1573",
+      "confidence": "high"
+    },
+    {
+      "tactic": "Command and Control",
+      "technique": "Asymmetric Cryptography",
+      "id": "T1573.002",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Resource Development",
+      "technique": "Acquire Infrastructure",
+      "id": "T1583",
+      "confidence": "medium"
+    },
+    {
+      "tactic": "Resource Development",
+      "technique": "Domains",
+      "id": "T1583.001",
+      "confidence": "high"
     }
   ]
 }
