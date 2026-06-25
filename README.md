@@ -1,3 +1,5 @@
+##frontend repo link :-https://github.com/Rrp14/Threat_analyzer_frontend
+
 # Threat Intelligence Platform (SOC Analyst Workbench)
 
 An enterprise-grade, AI-powered Threat Intelligence Platform designed as a **SOC Analyst Workbench**. The platform ingest logs, threat reports, and network telemetry in various formats, extracts Indicators of Compromise (IOCs), enriches them with threat intelligence metadata (reputation, CVE parameters, MITRE techniques), calculates an asymptotic risk score, and lazy-loads advanced analytic reports, detection rules, relationship graphs, and attack paths.
