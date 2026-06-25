@@ -1,4 +1,5 @@
-##frontend repo link :-https://github.com/Rrp14/Threat_analyzer_frontend
+## frontend repo link :-https://github.com/Rrp14/Threat_analyzer_frontend
+## backend api documentation :-https://threat-analyzer-nbhg.onrender.com/docs
 
 # Threat Intelligence Platform (SOC Analyst Workbench)
 
