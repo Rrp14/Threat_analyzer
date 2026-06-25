@@ -51,5 +51,6 @@ class IOCExtractionService:
                     value=value,
                     confidence=self.DEFAULT_CONFIDENCE,
                 )
+      
 
         return list(extracted.values())
