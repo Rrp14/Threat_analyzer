@@ -231,5 +231,17 @@
     "affected_products": [
       "VMware Aria Operations for Networks 6.0.0 - 6.10.0"
     ]
+  },
+  "CVE-2023-3519": {
+    "cvss": 9.8,
+    "severity": "critical",
+    "description": "Remote code execution vulnerability in Citrix NetScaler ADC and NetScaler Gateway. Unauthenticated attackers can exploit a stack buffer overflow when the appliance is configured as a Gateway or AAA virtual server. Actively exploited by multiple threat actors including ransomware groups for initial access.",
+    "exploit_available": true,
+    "affected_products": [
+      "Citrix NetScaler ADC 13.1 before 13.1-49.13",
+      "Citrix NetScaler ADC 13.0 before 13.0-91.13",
+      "Citrix NetScaler Gateway 13.1 before 13.1-49.13",
+      "Citrix NetScaler Gateway 13.0 before 13.0-91.13"
+    ]
   }
 }

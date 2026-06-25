@@ -166,5 +166,13 @@
   "a1b2c3d4e5f6789012345678901234567890abcdef1234567890abcdef12345678": {
     "score": 98,
     "level": "malicious"
+  },
+  "CVE-2023-3519": {
+    "score": 97,
+    "level": "malicious"
+  },
+  "CVE-2024-12345": {
+    "score": 95,
+    "level": "malicious"
   }
 }
